@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f6f5c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Aspaka-Mika</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="gate" hidden><form id="gate-form"><h1>Aspaka-Mika</h1>
+<input id="pw" type="password" placeholder="סיסמה" autocomplete="current-password" required>
+<button class="primary">כניסה</button><p id="gate-err" role="alert"></p></form></div>
+<header>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-floor="1">קומה 1</button>
+    <button role="tab" data-floor="2">קומה 2</button>
+  </nav>
+  <input id="q" type="search" placeholder="חיפוש מוצר או מק״ט" autocomplete="off" enterkeyhint="search">
+  <nav id="nav" aria-label="קטגוריות"></nav>
+  <div id="banner" hidden>השמירה במכשיר לא זמינה – השינויים יאבדו בסגירת העמוד</div>
+</header>
+<main id="list"></main>
+<footer>
+  <div id="meta"></div>
+  <label class="when">תאריך הקובץ <input id="date" type="date" required></label>
+  <div id="fname" dir="rtl"></div>
+  <div class="actions">
+    <button id="reset" class="ghost">אפס הכל</button>
+    <button id="send" class="primary">שלח לאקסל</button>
+  </div>
+  <div id="toast" role="status" hidden></div>
+</footer>
+<script src="vendor/xlsx-js-style.js"></script>
+<script src="gate.js"></script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(function () {});</script>
+</body>
+</html>
